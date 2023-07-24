@@ -1,0 +1,171 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: TVM RES
+  description: ''
+paths: 
+            
+  /queryAvailableTrainAction.do:
+    post:
+      summary: Server example operation
+      requestBody:
+        description: This is an example operation to show how security is applied to the call.
+        content:
+          application/json:
+            schema:
+              properties:
+                equipmentId:
+                  type: number
+                  example: 02106
+                userName: 
+                  type: number
+                  example: 02106
+                userPassword:
+                  type: string
+                  example: 02106
+                departStation:
+                  type: number
+                  example: 1
+                arrivalStation:
+                  type: number
+                  example: 12
+                departDateAndTime:
+                  type: number
+                  example: 202307071534
+                totalPassengers:
+                  type: number
+                  example: 1
+                simulatorIndicator:
+                  type: number
+                  example: 0
+                testIndicator:
+                  type: number
+                  example: 0
+      responses:
+        default:
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  GENERAL:
+                    type: object
+                    properties:
+                      equipmentId:
+                        type: number
+                        example: 02106
+                      userName: 
+                        type: number
+                        example: 02106
+                      userPassword:
+                        type: string
+                        example: 02106
+                  TRAINLIST:
+                    type: object
+                    properties:
+                      TRAIN:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            ticketTrainId:
+                              type: number
+                              example: 657
+                            ticketClassId:
+                              type: number
+                              example: 2
+                            ticketSubClassId:
+                              type: string
+                              example: 0;0
+                            ticketPeakOffPeakIndicator:
+                              type: string
+                              example: 0;0
+                            ticketDepartureStationId:
+                              type: number
+                              example: 1
+                            ticketDepartureDateAndTime:
+                              type: number
+                              example: 1692084959
+                            ticketArrivalStationId:
+                              type: number
+                              example: 12
+                            ticketArrivalDateAndTime:
+                              type: number
+                              example: 1692092759
+                            ticketTestIndicator:
+                              type: number
+                              example: 0
+                
+
+            
+
+  /preBookingAction:
+    get:
+        summary: Server example operation
+        requestBody:
+          description: This is an example operation to show how security is applied to the call.
+          content:
+            application/json:
+              schema:
+                properties:
+                  equipmentId:
+                    type: number
+                    example: 02106
+                  userName: 
+                    type: number
+                    example: 02106
+                  userPassword:
+                    type: string
+                    example: 02106
+                  isRoundTrip:
+                    type: number
+                    example: 0
+                  departStation:
+                    type: number
+                    example: 1
+                  arrivalStation:
+                    type: number
+                    example: 12
+                  trainNumber:
+                    type: string
+                    example: 841
+                  departDate:
+                    type: string
+                    example: 20230724
+                  trainClass:
+                    type: string
+                    example: 0
+                  trainSubClass:
+                    type: string
+                    example: 0
+                  profileNumber:
+                    type: string
+                    example: 1;0;0;0
+                  customerId:
+                    type: number
+                    example: 0
+                  membershipId:
+                    type: number
+                    example: 0
+                  preBookOutwardIndicator:
+                    type: number
+                    example: 0
+                  simulatorIndicator:
+                    type: number
+                    example: 0
+                  testIndicator:
+                    type: number
+                    example: 0
+        responses:
+          default:
+            description: OK
+                     
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: For TVMII Server Testing
+    url: http://127.0.0.1:8080/TVMII
+  
+
+    
+
